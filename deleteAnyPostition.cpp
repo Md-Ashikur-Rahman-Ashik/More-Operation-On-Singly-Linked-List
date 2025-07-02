@@ -61,6 +61,7 @@ int main()
     int inputValue;
     while (true)
     {
+        cin >> inputValue;
         if (inputValue == -1)
         {
             break;
