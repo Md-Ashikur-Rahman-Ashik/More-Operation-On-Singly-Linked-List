@@ -32,20 +32,18 @@ void insertAtTail(Node *&head, Node *&tail, int integerValue)
 void sortLinkedList(Node *&head)
 {
     Node *tmp = head;
-    while (tmp != NULL)
+    for (; tmp->nextPointer != NULL;)
     {
         Node *secondTmp = tmp->nextPointer;
-        Node *anotherTmp = tmp;
-        while (anotherTmp != NULL)
+        for (; secondTmp != NULL;)
         {
-            if (secondTmp->integerValue && tmp->integerValue > secondTmp->integerValue)
+            if (tmp->integerValue < secondTmp->integerValue)
             {
                 int swapValue = tmp->integerValue;
                 tmp->integerValue = secondTmp->integerValue;
                 secondTmp->integerValue = swapValue;
             }
             secondTmp = secondTmp->nextPointer;
-            anotherTmp = anotherTmp->nextPointer;
         }
         tmp = tmp->nextPointer;
     }
